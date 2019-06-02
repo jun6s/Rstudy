@@ -28,8 +28,7 @@ valueBox(10,
 ### value2
 
 ```{r}
-valueBox(params$rate,
-         caption = "↑ parameter")
+valueBox(params$rate,caption = "parameter")
 ```
 
 
