@@ -1,8 +1,15 @@
 ---
-title: "Visual samples"
+title: "jsgadget samples"
 author: "Jun Ohashi"
 date: "2019/6/2"
-output: html_document
+output:
+  rmdformats::readthedown:
+    code_folding: hide
+    self_contained: true
+    thumbnails: false
+    lightbox: false
+    md_extensions: -ascii_identifiers
+    css: template.css
 ---
 
 ```{r setup, include=FALSE}
