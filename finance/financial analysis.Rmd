@@ -1,0 +1,35 @@
+---
+title: "financial analysis"
+author: "Jun Ohashi"
+date: "`r Sys.Date()`"
+output:
+  rmdformats::readthedown:
+    self_contained: true
+    thumbnails: false
+    lightbox: false
+    md_extensions: -ascii_identifiers
+    css: template.css
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(knitr)
+library(rmdformats)
+
+library(plotly)
+library(formattable)
+library(dygraphs)
+library(metricsgraphics)
+
+## Global options
+options(max.print="75")
+opts_chunk$set(echo=TRUE,
+                 cache=FALSE,
+               prompt=FALSE,
+               tidy=TRUE,
+               comment=NA,
+               message=FALSE,
+               warning=FALSE)
+```
+
+
