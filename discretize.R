@@ -1,0 +1,2 @@
+library(infotheo)
+library(discretization)
