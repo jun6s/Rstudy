@@ -71,6 +71,10 @@ diamonds %>%
 
 # 相関の一括プロット ------------------------------------------------------------------
 
+install.packages('minerva')
+
+diamonds %$% minerva::mine(x,price)
+
 #相関ならplot_correlation
 split_columns(diamonds)$continuous %>% 
   plot_correlation()
