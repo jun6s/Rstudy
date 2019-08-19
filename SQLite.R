@@ -44,3 +44,28 @@ tmp <- con %>% dbGetQuery( "SELECT * FROM seika" )
 rs <- con %>% dbSendQuery( "SELECT * FROM seika" )
 tmp <- rs %>% dbFetch()
 rs %>% dbClearResult()
+
+
+
+
+library("RSQLite")
+
+con = dbConnect(SQLite(), "pp.db", synchronous="off")
+#指定した名前の.dbにつなぐ。なければ作る。
+
+dbSendQuery(con, "create table hoge(hinmei text, nedan int)")
+#テーブルをつくる。なければはじかれる
+
+dbListTables(con)
+dbListFields(con, "hoge")
+#テーブルがあることを確認。デーブルの定義がされていることを確認。
+
+dbSendQuery(con, "insert into hoge values('りんご', 500)")
+dbSendQuery(con, "insert into hoge values('みかん', 300)")
+dbGetQuery(con, "select * from hoge")
+#送ったものが入っているか確認
+dbSendQuery(con, "update hoge set nedan=200 where hinmei='みかん'")
+#中の値をupdateしてみる
+dbGetQuery(con, "select * from hoge")
+dbReadTable(con, "hoge")
+#中にはいっているか確認
